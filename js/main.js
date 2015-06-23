@@ -14,12 +14,12 @@ var Chequeado;
             color: "#02A2DC",
             presi:{
                 name: "Daniel SCIOLI",
-                pic: "/img/scioli.png",
+                pic: "img/scioli.png",
                 bio: "Gobernador de la Provincia de Buenos Aires"
             },
             vice:{
                 name: "Carlos ZANNINI",
-                pic: "/img/zannini.png",
+                pic: "img/zannini.png",
                 bio: "Secretario Legal y Técnica de la Presidencia de la Nación"
             }
         },
@@ -30,12 +30,12 @@ var Chequeado;
             color: "#FFD202",
             presi:{
                 name: "Mauricio MACRI",
-                pic: "/img/macri.jpg",
+                pic: "img/macri.jpg",
                 bio: "Jefe de Gobierno de la Ciudad de Buenos Aires"
             },
             vice:{
                 name: "Gabriela MICHETTI",
-                pic: "/img/michetti.jpg",
+                pic: "img/michetti.jpg",
                 bio: "Secretario Legal y Técnica de la Presidencia de la Nación"
             }
         }
