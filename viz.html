@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chequeado</title>
+
+    <!-- Bootstrap -->
+  <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
+  <link href="css/main.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+
+          <div id="carousel-candidatos" class="carousel slide">
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+              
+              <div class="item color">
+                <div class="container">
+                  
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <h2 class="text-center party"></h2>
+                    </div>
+                  </div>
+
+                  <hr/>
+
+                  <div class="row">
+                    <div class="col-xs-6 presi">
+                      <img class="img-responsive img-circle pic">
+                      <div class="carousel-caption">
+                        PRESIDENTE
+                      </div>
+                    </div>
+                    <div class="col-xs-6 vice">
+                      <img class="img-responsive img-circle pic">
+                      <div class="carousel-caption">
+                        VICEPRESIDENTE
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <hr/>
+                  
+                  <div class="row">
+                    <div class="col-xs-6 presi">
+                      <p class="lead text-right name"></p>
+                      <p class="text-right bio"></p>
+                    </div>
+                    <div class="col-xs-6 vice">
+                      <p class="lead name"></p>
+                      <p class="bio"></p>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-candidatos" role="button" data-slide="prev">
+              <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-candidatos" role="button" data-slide="next">
+              <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+              <li data-bind="color" data-target="#carousel-candidatos"></li>
+            </ol>
+
+          </div>
+      
+    
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/transparency/dist/transparency.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script type="text/javascript">
+      window.onload = function() {
+          Chequeado.init();
+      }
+    </script>
+
+  </body>
+</html>

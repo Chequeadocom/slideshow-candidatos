@@ -2,16 +2,7 @@ html,body{
 	height: 100%;
 	width: 100%;
 }
-#chequeado-map{
+
+.carousel-inner,.slide,.item{
 	height: 100%;
-	width: 100%;
 }
-
-#button-container{
-	position: absolute;
-	z-index: 1000;
-	right: 20px;
-	top: 93px;
-}
-
-
