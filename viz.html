@@ -40,14 +40,12 @@
                   <div class="row">
                     <div class="col-xs-6">
                       <img class="img-responsive img-circle" data-bind="presi_foto">
-                      <div class="carousel-caption">
-                        PRESIDENTE
+                      <div class="carousel-caption" data-bind="presi_cargo">
                       </div>
                     </div>
                     <div class="col-xs-6 vice">
                       <img class="img-responsive img-circle" data-bind="vice_foto">
-                      <div class="carousel-caption">
-                        VICEPRESIDENTE
+                      <div class="carousel-caption" data-bind="vice_cargo">
                       </div>
                     </div>
                   </div>
@@ -97,7 +95,7 @@
 
     <script type="text/javascript">
       window.onload = function() {
-          Chequeado.init('1XJrukOHgTsCOqC0it0b_RvZJbKa23NqsQdTulstmXaY');
+          Chequeado.init();
       }
     </script>
 

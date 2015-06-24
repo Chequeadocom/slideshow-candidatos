@@ -4,42 +4,7 @@ var Chequeado;
 
     "use strict";
 
-    Chequeado = global.Chequeado = global.Chequeado || {};
-
-    /*Chequeado.data = [
-        {
-            id: 0,
-            active: true,
-            party: "Frente para la Victoria",
-            color: "#02A2DC",
-            presi:{
-                name: "Daniel SCIOLI",
-                pic: "img/scioli.png",
-                bio: "Gobernador de la Provincia de Buenos Aires"
-            },
-            vice:{
-                name: "Carlos ZANNINI",
-                pic: "img/zannini.png",
-                bio: "Secretario Legal y Técnica de la Presidencia de la Nación"
-            }
-        },
-        {
-            id:1,
-            activo: false,
-            party: "PRO",
-            color: "#FFD202",
-            presi:{
-                name: "Mauricio MACRI",
-                pic: "img/macri.jpg",
-                bio: "Jefe de Gobierno de la Ciudad de Buenos Aires"
-            },
-            vice:{
-                name: "Gabriela MICHETTI",
-                pic: "img/michetti.jpg",
-                bio: "Secretario Legal y Técnica de la Presidencia de la Nación"
-            }
-        }
-    ];*/
+    Chequeado = {};
 
     Chequeado.directives = {
         color: {
@@ -79,19 +44,33 @@ var Chequeado;
         }
     };
 
-    Chequeado.init = function(key){
+    Chequeado.getParam = function(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    };
 
-        Tabletop.init( { key: key,
-                callback: Chequeado.dataLoaded,
-                parseNumbers: true,
-                simpleSheet: true }
-            );
+    Chequeado.init = function(){
+        var key = Chequeado.getParam('key');
+        if(key){
+            try {
+                Tabletop.init( { key: key,
+                        callback: Chequeado.dataLoaded,
+                        parseNumbers: true,
+                        simpleSheet: true });
+            }
+            catch(err) {
+                alert('Error al leer la planilla: '+err.message);
+            }
+        }else{
+            alert('Falta el parámetro "key" en la url.');
+        }
+
 
     };
 
-    Chequeado.dataLoaded = function(data, tabletop){
-        console.log(data);
-        
+    Chequeado.dataLoaded = function(data, tabletop){        
         Chequeado.data = data;
 
         $('.carousel-inner').render(Chequeado.data,Chequeado.directives);
@@ -101,4 +80,4 @@ var Chequeado;
         },2000);
     };
 
-})(window, document,jQuery);
+})(window, document, jQuery);
