@@ -26,26 +26,26 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
               
-              <div class="item color">
+              <div class="item" data-bind="color">
                 <div class="container">
                   
                   <div class="row">
                     <div class="col-xs-12">
-                      <h2 class="text-center party"></h2>
+                      <h2 class="text-center" data-bind="partido"></h2>
                     </div>
                   </div>
 
                   <hr/>
 
                   <div class="row">
-                    <div class="col-xs-6 presi">
-                      <img class="img-responsive img-circle pic">
+                    <div class="col-xs-6">
+                      <img class="img-responsive img-circle" data-bind="presi_foto">
                       <div class="carousel-caption">
                         PRESIDENTE
                       </div>
                     </div>
                     <div class="col-xs-6 vice">
-                      <img class="img-responsive img-circle pic">
+                      <img class="img-responsive img-circle" data-bind="vice_foto">
                       <div class="carousel-caption">
                         VICEPRESIDENTE
                       </div>
@@ -55,13 +55,13 @@
                   <hr/>
                   
                   <div class="row">
-                    <div class="col-xs-6 presi">
-                      <p class="lead text-right name"></p>
-                      <p class="text-right bio"></p>
+                    <div class="col-xs-6">
+                      <p class="lead text-right" data-bind="presi_nombre"></p>
+                      <p class="text-right" data-bind="presi_bio"></p>
                     </div>
-                    <div class="col-xs-6 vice">
-                      <p class="lead name"></p>
-                      <p class="bio"></p>
+                    <div class="col-xs-6">
+                      <p class="lead" data-bind="vice_nombre"></p>
+                      <p class="" data-bind="vice_bio"></p>
                     </div>
                   </div>
 
@@ -92,11 +92,12 @@
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/transparency/dist/transparency.min.js"></script>
+    <script src="bower_components/tabletop/src/tabletop.js"></script>
     <script src="js/main.js"></script>
 
     <script type="text/javascript">
       window.onload = function() {
-          Chequeado.init();
+          Chequeado.init('1XJrukOHgTsCOqC0it0b_RvZJbKa23NqsQdTulstmXaY');
       }
     </script>
 

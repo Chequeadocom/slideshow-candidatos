@@ -6,7 +6,7 @@ var Chequeado;
 
     Chequeado = global.Chequeado = global.Chequeado || {};
 
-    Chequeado.data = [
+    /*Chequeado.data = [
         {
             id: 0,
             active: true,
@@ -25,7 +25,7 @@ var Chequeado;
         },
         {
             id:1,
-            active: false,
+            activo: false,
             party: "PRO",
             color: "#FFD202",
             presi:{
@@ -39,12 +39,12 @@ var Chequeado;
                 bio: "Secretario Legal y Técnica de la Presidencia de la Nación"
             }
         }
-    ];
+    ];*/
 
     Chequeado.directives = {
         color: {
             class: function(){
-                return (this.active)?'item color active':'item color';
+                return (this.activo)?'item color active':'item color';
             },
             style: function(){
                 return 'background-color:'+this.color;
@@ -53,27 +53,22 @@ var Chequeado;
                 return '';
             }
         },
-        presi:{
-            pic: {
-                src: function(){
-                    return this.pic;
-                }
-            }            
+        presi_foto:{
+            src: function(){
+                return this.presi_foto;
+            }
         },
-        vice:{
-            pic: {
-                src: function(){
-                    return this.pic;
-                }
-            }            
+        vice_foto:{
+            src: function(){
+                return this.vice_foto;
+            }
         }
-
     };
 
     Chequeado.directives_indicators = {
         color:{
             class: function(){
-                return (this.active)?'active':'';
+                return (this.activo)?'active':'';
             },
             "data-slide-to": function(params){
                 return this.id;
@@ -84,13 +79,26 @@ var Chequeado;
         }
     };
 
-    Chequeado.init = function(){
+    Chequeado.init = function(key){
+
+        Tabletop.init( { key: key,
+                callback: Chequeado.dataLoaded,
+                parseNumbers: true,
+                simpleSheet: true }
+            );
+
+    };
+
+    Chequeado.dataLoaded = function(data, tabletop){
+        console.log(data);
+        
+        Chequeado.data = data;
+
         $('.carousel-inner').render(Chequeado.data,Chequeado.directives);
         $('.carousel-indicators').render(Chequeado.data,Chequeado.directives_indicators);
         setTimeout(function(){
             $('#carousel-candidatos').carousel();
         },2000);
-        //$('#carousel-candidatos').carousel(0);
     };
 
 })(window, document,jQuery);
