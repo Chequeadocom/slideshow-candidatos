@@ -70,6 +70,22 @@ var Chequeado;
 
     };
 
+    Chequeado.initGenerador = function(){
+        $('#test').on('click',function(){
+            var sheet = $('#sheet').val();
+            var height = $('#height').val();
+
+            if(sheet && height){
+                var url = location.origin + location.pathname + 'viz.html?key='+sheet;
+                $('iframe').attr('src',url).attr('height',height);
+                $('textarea').html('<iframe src="'+url+'" frameborder="0" height="'+height+'" width="100%"></iframe>');
+            } else {
+                alert('Complete todos los campos');
+            }
+        });
+    };
+
+
     Chequeado.dataLoaded = function(data, tabletop){        
         Chequeado.data = data;
 
