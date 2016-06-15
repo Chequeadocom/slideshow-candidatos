@@ -101,7 +101,7 @@ var Chequeado;
                 if(pym){
                     var pymParent = new pym.Parent('iframe-single', url, {});
                 }
-                $('#textarea-single').val('<div data-pym-src="'+url+'"></div><script scr="http://cdn.bootcss.com/pym/0.4.5/pym.min.js"></script>');
+                $('#textarea-single').val('<div data-pym-src="'+url+'"></div><script src="http://cdn.bootcss.com/pym/0.4.5/pym.min.js"></script>');
             } else {
                 alert('Complete el id del spreadsheet');
             }
