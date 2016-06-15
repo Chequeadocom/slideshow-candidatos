@@ -1,0 +1,9 @@
+html,body{
+	width: 100%;
+}
+.item{
+	padding-bottom: 50px;
+}
+.carousel-control {
+	z-index:11;
+}

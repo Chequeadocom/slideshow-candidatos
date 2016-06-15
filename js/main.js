@@ -18,6 +18,11 @@ var Chequeado;
                 return '';
             }
         },
+        foto:{
+            src: function(){
+                return this.foto;
+            }
+        },
         presi_foto:{
             src: function(){
                 return this.presi_foto;
@@ -52,6 +57,9 @@ var Chequeado;
     };
 
     Chequeado.init = function(){
+        if(window.pym){
+            var pymChild = pym.Child({ polling: 1000 });
+        }
         var key = Chequeado.getParam('key');
         if(key){
             try {
@@ -70,17 +78,32 @@ var Chequeado;
 
     };
 
-    Chequeado.initGenerador = function(){
+    Chequeado.initGenerador = function(){        
+
         $('#test').on('click',function(){
             var sheet = $('#sheet').val();
             var height = $('#height').val();
 
             if(sheet && height){
                 var url = location.origin + location.pathname + 'viz.html?key='+sheet;
-                $('iframe').attr('src',url).attr('height',height);
-                $('textarea').html('<iframe src="'+url+'" frameborder="0" height="'+height+'" width="100%"></iframe>');
+                $('#iframe').attr('src',url).attr('height',height);
+                $('#textarea').html('<iframe src="'+url+'" frameborder="0" height="'+height+'" width="100%"></iframe>');
             } else {
                 alert('Complete todos los campos');
+            }
+        });
+
+        $('#test-single').on('click',function(){
+            var sheet = $('#sheet-single').val();
+
+            if(sheet){
+                var url = location.origin + location.pathname + 'viz-single.html?key='+sheet;
+                if(pym){
+                    var pymParent = new pym.Parent('iframe-single', url, {});
+                }
+                $('#textarea-single').val('<div data-pym-src="'+url+'"></div><script scr="http://cdn.bootcss.com/pym/0.4.5/pym.min.js"></script>');
+            } else {
+                alert('Complete el id del spreadsheet');
             }
         });
     };
