@@ -1,0 +1,185 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>slideshow gulp</title>
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+  </head>
+  <body style="background-color:#ccc">
+    <!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    
+
+  <div class="container">
+      
+      <h1 class="text-center">Slideshow responsive con imágenes y texto</h1>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            
+            <h3>Tipo de slideshow</h3>
+            <div class="col-md-6">
+              <label class="radio">
+                <input autocomplete="off" class="slideshow-type" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="doble"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> <span class="glyphicon glyphicon-picture" aria-hidden="true"></span><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Pares de imágenes
+              </label>
+              <label class="radio">
+                <input autocomplete="off" class="slideshow-type" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="individual"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span><span class="glyphicon glyphicon-picture" aria-hidden="true"></span><span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> Imagen individual
+              </label>
+            </div>
+
+            <div class="col-md-6">
+            <p class="msg doble">Se trata de un slideshow con DOS imágenes y texto en cada slide.</p>
+            <p class="msg individual">Se trata de un slideshow con UNA imagen y texto en cada slide.</p>
+            </div>
+
+          </div>
+          <div class="row">
+
+            <hr/>
+
+            <div id="test-block">
+
+              <div class="col-md-6">
+                <h3>1. Datos</h3>
+                <p>Crear y publicar Google Spreadsheet con la siguiente estructura y completar con los datos correspondientes (cada registro es una fórmula, un slideshow por spreadsheet): <a class="btn btn-link msg doble" href="https://docs.google.com/spreadsheets/d/1u4yRBwT21vDhQJmkHpp2l96ExnPcNv5X28pK3W6e134/edit" target="_blank">Ver plantilla ejemplo</a>
+                <a class="btn btn-link msg individual" href="https://docs.google.com/spreadsheets/d/11NvCdGxuRFV47e6O23W3qASl_gwtgqy0EBil90Y0tNA/edit" target="_blank">Ver plantilla ejemplo</a></p>
+              </div>
+
+              <div class="col-md-6">
+                <h3>2. Test</h3>
+                <div class="form-group">
+                  <p>Colocar el Id de google</p>
+                  <div class="input-group">
+                    <input id="sheet" type="text" class="form-control" placeholder="Id de google">
+                    <span class="input-group-btn">
+                      <a id="test" class="btn btn-default">Test!</a>
+                    </span>
+                  </div><!-- /input-group -->
+                  <span class="help-block small msg doble">Ej: <a href="javascript:;" class="example-link">1u4yRBwT21vDhQJmkHpp2l96ExnPcNv5X28pK3W6e134</a></span>
+                  <span class="help-block small msg individual">Ej: <a href="javascript:;" class="example-link">11NvCdGxuRFV47e6O23W3qASl_gwtgqy0EBil90Y0tNA</a></span>
+                </div>
+              </div>
+
+              <div id="demo-block">
+
+                <div class="col-md-6">
+                  <h3>3. Demo</h3>
+                  <p>Así se verá en tu sitio:</p>
+                  <div id="iframe"></div>
+                </div>
+                <div class="col-md-6">
+                  <h3>4. Embed</h3>
+                  <p>Código para embeber:</p>
+                  <textarea id="textarea" class="form-control" rows="10"></textarea>
+                </div>
+              
+              </div>
+
+            </div>
+          
+          </div>
+        
+        </div>
+
+      </div>
+
+    </div>
+    
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='https://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script>
+
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/pym.js/dist/pym.js"></script>
+    <script src="/bower_components/tabletop/src/tabletop.js"></script>
+    <script src="/bower_components/transparency/dist/transparency.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    
+    <!-- build:js scripts/plugins.js -->
+    <script src="/bower_components/bootstrap/js/affix.js"></script>
+    <script src="/bower_components/bootstrap/js/alert.js"></script>
+    <script src="/bower_components/bootstrap/js/dropdown.js"></script>
+    <script src="/bower_components/bootstrap/js/tooltip.js"></script>
+    <script src="/bower_components/bootstrap/js/modal.js"></script>
+    <script src="/bower_components/bootstrap/js/transition.js"></script>
+    <script src="/bower_components/bootstrap/js/button.js"></script>
+    <script src="/bower_components/bootstrap/js/popover.js"></script>
+    <script src="/bower_components/bootstrap/js/carousel.js"></script>
+    <script src="/bower_components/bootstrap/js/scrollspy.js"></script>
+    <script src="/bower_components/bootstrap/js/collapse.js"></script>
+    <script src="/bower_components/bootstrap/js/tab.js"></script>
+    <!-- endbuild -->
+    
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+
+    <!-- Interacción -->
+    <script type="text/javascript">
+
+        var page;
+
+        $('.slideshow-type').click(function(){
+          page = $(this).val();
+          $('#test-block').fadeIn();
+          $('#demo-block').fadeOut();
+          $('#sheet').val('');
+          $('#iframe').empty();
+          $('.msg').hide();
+          $('.msg.'+page).show();
+        });
+
+        $('#test').on('click',function(){
+            $('#demo-block').fadeIn();
+            var sheet = $('#sheet').val();
+
+            $('#iframe').empty();
+
+            if(sheet){
+                var url = location.origin + location.pathname + 'index-' + page + '.html?key='+sheet;
+                var pymFile = location.origin + location.pathname + 'scripts/vendor/pym.min.js';
+                var pymParent = new pym.Parent('iframe', url, {});
+                $('#textarea').val('<div data-pym-src="'+url+'"></div><script src="'+pymFile+'"><\/script>');
+            } else {
+                alert('Complete el id del spreadsheet');
+            }
+        });
+
+        $('.example-link').on('click',function(){
+          $('#sheet').val($(this).html());
+          $('#test').click();
+        });
+
+
+    </script>
+  </body>
+</html>

@@ -1,16 +1,7 @@
-# Slideshow de candidatos
+# Slideshow para emebeber en chequeado
 
-1. Crear y publicar Google Spreadsheet con la siguiente estructura y completar con los datos correspondientes (cada registro es una fórmula, un slideshow por spreadsheet):
+Herramienta que permite generar slideshow responsive con imágenes y texto para embeber en un sitio web. Toma la información desde una hoja de cálculo de Google Spreadsheet.
 
-https://docs.google.com/spreadsheets/d/1HRSyBbEUWhzEE9TFPhvhCBekaV8dsCmP3NNl6_3FTfg/pubhtml
+Siga las instrucciones en:	http://chequeado.github.io/slideshow-candidatos/
 
-2. Generar iframe para embeber utilizando:
-
-	http://chequeadocom.github.io/slideshow-candidatos/
-
-3. Un ejemplo de iframe generado:
-
-```html
-	<iframe src="http://chequeadocom.github.io/slideshow-candidatos/viz.html?key=1HRSyBbEUWhzEE9TFPhvhCBekaV8dsCmP3NNl6_3FTfg" frameborder="0" height="500" width="100%"></iframe>
-```
 
