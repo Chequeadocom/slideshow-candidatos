@@ -1,5 +1,9 @@
-#test-block,#demo-block,.msg{
+#test-block,#demo-block,.msg,#type-block{
   display: none;
+}
+
+label.radio{
+	cursor: pointer;
 }
 
 html,body{

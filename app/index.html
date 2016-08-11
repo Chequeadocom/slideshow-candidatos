@@ -35,7 +35,7 @@
 
       <div class="row">
         <div class="col-md-12">
-          <div class="row">
+          <div id="type-block" class="row">
             
             <h3>Tipo de slideshow</h3>
             <div class="col-md-6">
@@ -48,8 +48,8 @@
             </div>
 
             <div class="col-md-6">
-            <p class="msg doble">Se trata de un slideshow con DOS imágenes y texto en cada slide.</p>
-            <p class="msg individual">Se trata de un slideshow con UNA imagen y texto en cada slide.</p>
+              <p class="msg doble">Se trata de un slideshow con DOS imágenes y texto en cada slide.</p>
+              <p class="msg individual">Se trata de un slideshow con UNA imagen y texto en cada slide.</p>
             </div>
 
           </div>
@@ -146,6 +146,9 @@
     <!-- Interacción -->
     <script type="text/javascript">
 
+      $(document).ready(function(){
+        $('#type-block').fadeIn();
+
         var page;
 
         $('.slideshow-type').click(function(){
@@ -179,6 +182,7 @@
           $('#test').click();
         });
 
+      });
 
     </script>
   </body>
