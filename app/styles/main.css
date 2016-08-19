@@ -15,3 +15,8 @@ html,body{
 .carousel-control {
   z-index:11;
 }
+
+.img-foto{
+	margin:0 auto;
+	width: 100%;
+}
